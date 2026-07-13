@@ -32,11 +32,8 @@ function App() {
   };
 
   return (
-    /* Outermost Div: Sets the tattoo background image with a dark overlay overlay */
-    <div 
-      className="min-h-screen text-white font-sans selection:bg-amber-500 selection:text-black bg-cover bg-center bg-no-repeat bg-fixed relative"
-      style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('/bg.jpg')" }}
-    >
+    /* Outermost Div: Replaced style attribute with direct Tailwind utility bg-[url(...)] and gradient overlay */
+    <div className="min-h-screen text-white font-sans selection:bg-amber-500 selection:text-black bg-cover bg-center bg-no-repeat bg-fixed relative bg-[linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),url('/blurred_background.jpg')]">
       {/* Top Banner */}
       <div className="bg-amber-500 text-black text-xs font-bold tracking-widest uppercase py-2 text-center relative z-10">
         ✨ Opening Special: Enjoy 20% Off Your First Luxury Session ✨
