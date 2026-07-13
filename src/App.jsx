@@ -32,8 +32,8 @@ function App() {
   };
 
   return (
-    /* Outermost Div: Replaced style attribute with direct Tailwind utility bg-[url(...)] and gradient overlay */
-    <div className="min-h-screen text-white font-sans selection:bg-amber-500 selection:text-black bg-cover bg-center bg-no-repeat bg-fixed relative bg-[linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),url('/blurred_background.jpg')]">
+    /* Outermost Div: Changed gradient opacity from 85%/90% down to a much lighter 40%/60% for a bright, vibrant image */
+    <div className="min-h-screen text-white font-sans selection:bg-amber-500 selection:text-black bg-cover bg-center bg-no-repeat bg-fixed relative bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url('/blurred_background.jpg')]">
       {/* Top Banner */}
       <div className="bg-amber-500 text-black text-xs font-bold tracking-widest uppercase py-2 text-center relative z-10">
         ✨ Opening Special: Enjoy 20% Off Your First Luxury Session ✨
@@ -54,11 +54,11 @@ function App() {
 
       {/* Hero Section */}
       <main className="max-w-4xl mx-auto text-center px-4 pt-16 pb-24 relative z-10">
-        <h2 className="font-display text-4xl md:text-6xl tracking-wider uppercase mb-2">
+        <h2 className="font-display text-4xl md:text-6xl tracking-wider uppercase mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
           Redefining <br />
           <span className="text-amber-500">Elegance</span>
         </h2>
-        <p className="text-zinc-400 text-xs tracking-widest uppercase mb-8">
+        <p className="text-zinc-200 text-xs tracking-widest uppercase mb-8 drop-shadow-[0_1px_5px_rgba(0,0,0,0.8)]">
           Ink, Lashes & Fine-Line Tattoos
         </p>
         <div className="w-16 h-[1px] bg-amber-500 mx-auto mb-8"></div>
@@ -71,12 +71,12 @@ function App() {
       </main>
 
       {/* Menu Section */}
-      <section className="max-w-3xl mx-auto px-4 py-16 bg-neutral-950/60 backdrop-blur-md rounded-xl border border-zinc-900/50 mb-16 relative z-10">
+      <section className="max-w-3xl mx-auto px-4 py-16 bg-neutral-950/75 backdrop-blur-md rounded-xl border border-zinc-900/50 mb-16 relative z-10">
         <div className="text-center mb-10">
           <h3 className="font-display text-2xl tracking-widest uppercase text-amber-500">
             The Menu
           </h3>
-          <p className="text-zinc-500 text-xs tracking-widest uppercase">
+          <p className="text-zinc-400 text-xs tracking-widest uppercase">
             Our Premium Experiences
           </p>
         </div>
@@ -85,13 +85,13 @@ function App() {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="p-5 rounded-lg border border-zinc-900 bg-black/45 hover:border-amber-500/30 transition-all duration-300 flex justify-between items-start group"
+              className="p-5 rounded-lg border border-zinc-900 bg-black/60 hover:border-amber-500/30 transition-all duration-300 flex justify-between items-start group"
             >
               <div>
                 <h4 className="text-sm font-semibold text-zinc-200 group-hover:text-amber-500 transition-colors">
                   {service.name}
                 </h4>
-                <p className="text-xs text-zinc-500 mt-1">{service.desc}</p>
+                <p className="text-xs text-zinc-400 mt-1">{service.desc}</p>
               </div>
               <div className="flex flex-col items-end gap-2">
                 <span className="text-amber-500 font-medium text-sm">{service.price}</span>
@@ -113,7 +113,7 @@ function App() {
           <h3 className="font-display text-2xl tracking-widest uppercase text-amber-500">
             Our Lookbook
           </h3>
-          <p className="text-zinc-500 text-xs tracking-widest uppercase">
+          <p className="text-zinc-400 text-xs tracking-widest uppercase">
             Flawless Custom Execution
           </p>
         </div>
